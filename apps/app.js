@@ -7,3 +7,9 @@ $(function(){
     });
   });
 });
+
+function showResults(results){
+	$.each(results, function(index,value){
+		console.log(value.Title);
+	});
+}
