@@ -2,11 +2,15 @@ $(function(){
   $('#search-term').submit(function(event){
     event.preventDefault();
     var searchTerm = $('#query').val();
-    $.getJSON('http://www.omdbapi.com/?s=' + searchTerm + '&r=json', function(data){
-      showResults(data.Search);
-    });
+    getRequest(searchTerm);
   });
-})
+});
+
+function getRequest(searchTerm){
+  $.getJSON('http://www.omdbapi.com/?s=' + searchTerm + '&r=json', function(data){
+    showResults(data.Search);
+  });
+}
 
 function showResults(results){
   var html = "";
